@@ -1,8 +1,9 @@
 var dog,sadDog,happyDog, database;
 var foods = 0;
 var foodStock;
-var addFood,foodObj,lastFed,currentTime, half;
+var addFood,foodObj,lastFed,currentTime;
 var displayTime = "0:00 am";
+var half = "am";
 
 //create feed and lastFed variable here
 var feed;
@@ -50,10 +51,10 @@ function draw() {
     hours: time1.getHours()%12,
     half: Math.floor(time1.getHours()/12)
   }
-  if(time.half === 1){
-    half = "am"
+  if(time.half == 0){
+    half = "am";
   } else {
-    half = "pm"
+    half = "pm";
   }
   if(time.minutes > 9){
     time2 = time.hours.toString() + ":" + time.minutes.toString() + " " + half;
